@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html lang="en" ng-app="drops">
+  <head runat="server">
+    <meta charset="utf-8">
+    <title>drops gui</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/application.css"/>
+    </head>
+  <body ng-controller="ApplicationCtrl">
+    <div ng-include="'layout'"></div>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="javascripts/vendor/reload-client.js"></script>
+
+    <script type="text/javascript" src="javascripts/vendor/underscore/underscore.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/jquery/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="javascripts/templates.js"></script>
+
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/application.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/main.js"></script>
+  </body>
+</html>

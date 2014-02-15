@@ -1,0 +1,121 @@
+$primary = #343d46
+$secondary = #2d2d2d
+$tertiary = #232830
+
+html
+body
+  height 100%
+  overflow auto
+  padding 0
+  margin 0
+  
+  background-color $tertiary
+
+html
+body
+input
+textarea
+button
+  font-family 'Consolas'
+  color white
+  font-size 12px
+
+placerholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+input
+textarea
+  background-color $primary
+  border 0
+  padding 5px 10px
+  
+  +placerholder()
+    color #666
+
+button
+  background-color $primary
+  border 0
+  padding 5px 10px
+
+.application
+  background-color $secondary
+  position absolute
+  top 20px
+  bottom 20px
+  right 20px
+  left 20px
+  border 1px solid $primary
+
+  > .view
+    > .content 
+      position absolute
+      top 0
+      left 40px
+      bottom 0
+      right 0
+
+      padding 20px
+      overflow auto
+
+  .menu 
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    width 40px
+    background-color $primary
+
+    li
+      font-family 'EntypoRegular'
+      font-size 48px
+      line-height 0px
+      display block
+      width 40px
+      height 40px
+      background-color $primary
+      text-align center
+      cursor pointer
+
+      a
+        display block
+        padding-top 8px
+        width 40px
+        height (40px - @padding-top)
+        text-decoration none
+        color $tertiary
+
+      &:hover
+        background-color lighten($primary, 10%)
+        a  
+          color lighten($tertiary, 10%)
+        
+
+      &.selected
+        cursor default
+        background-color $secondary
+        a
+          cursor default
+          color white
+        
+
+
+
+  h1 
+    font-size 14px
+    margin-bottom 10px
+
+activity
+
+  position absolute
+  top 10px
+  right 30px
+  font-family 'EntypoRegular'
+  font-size 48px
+  line-height 0px

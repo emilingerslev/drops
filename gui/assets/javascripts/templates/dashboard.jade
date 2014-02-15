@@ -1,0 +1,10 @@
+div.content.dashboard
+
+  div hits: {{hits}}
+
+  div
+    form(ng-submit="search(query)")
+      input(ng-model="query")
+      button search
+
+  div {{data}}

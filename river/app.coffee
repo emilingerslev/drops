@@ -12,35 +12,41 @@ es.ping(
 connection = amqp.createConnection({ host: 'localhost' })
 # Wait for connection to become established.
 connection.on 'ready', () ->
+  console.log "Connection to RabbitMQ established"
   # console.log('sending')
   # connection.publish("elasticsearch", "{_id: 1}")
   # console.log('sent')
   #connection.end()
   # Use the default 'amq.topic' exchange
 
-  connection.exchange 'direct_logs', type:'direct', (exchange) ->
+  exchange = connection.exchange 'rings', type:'direct', () -> console.log 'open'
+  
+  connection.queue 'drops', durable: yes, (q) ->
+    console.log "Queue created"
+    # Catch all messages
+    q.bind('#')
 
-    connection.queue 'drops', durable: yes, (q) ->
-      # Catch all messages
-      q.bind('#')
+    # Receive messages
+    q.subscribe (message) ->
+      # Print messages to stdout
+      #console.log(message)
 
-      # Receive messages
-      q.subscribe (message) ->
-        # Print messages to stdout
-        console.log(message)
+      type = message.type ? 'unknown'
 
-        type = message.type ? 'unknown'
+      es.index(
+        index: 'drops_test'
+        type: type 
+        #id: '1'
+        body: message.data
+      , (err, resp) ->
+        if err 
+          console.trace "ElasticSearch index error: ", err
+        else
+          #console.log "ElasticSearch index ", resp 
+      )
 
-        es.index(
-          index: 'drops_test'
-          type: type 
-          #id: '1'
-          body: message.data
-        , (err, resp) ->
-          if err 
-            console.trace "ElasticSearch index error: ", err
-          else
-            console.log "ElasticSearch index ", resp 
-        )
-
+      console.log 'Published', type
+      try
         exchange.publish type, message.data
+      catch ex
+        console.log ex

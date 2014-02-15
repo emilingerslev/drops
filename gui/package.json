@@ -1,0 +1,7 @@
+{
+  "name": "PTS.Backend.Client.Shell.Web",
+  "version": "1.0.0",
+  "type": "app",
+  "dependencies": {
+  }
+}

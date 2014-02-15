@@ -1,0 +1,12 @@
+div.content.main
+
+  ul.apps
+    li(ng-repeat="app in apps" ng-class="{selected: app.name == selectedApp}") 
+      div.option(ng-hide="app.enabled" ng-click="enable(app)")  &#8214;
+      div.option(ng-show="app.enabled" ng-click="disable(app)")  &#9654;
+      div.name(ng-click="select(app)") {{app.name}}
+      
+
+  div.output(ng-repeat="(name,data) in outputs" ng-show="selectedApp == name")
+    div.name {{name}}:
+    div.content(ng-bind-html="data")

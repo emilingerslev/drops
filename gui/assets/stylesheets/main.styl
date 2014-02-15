@@ -1,0 +1,49 @@
+.main
+  
+  ul.apps
+    height 30px
+
+
+    li
+      display block
+      float left
+      background $primary
+      padding 5px
+      margin-right 10px
+      height 15px
+
+      div
+        float left
+        margin-top 1px
+
+      .option
+        font-family 'EntypoRegular'
+        font-size 30px
+        line-height 0px
+        height 5px
+        margin-top 0px
+        margin-right 3px
+        cursor pointer
+
+        &:hover 
+          color green
+
+      &.selected
+        color #f99157
+
+  .output
+    margin-top 15px
+
+    .name 
+      display inline
+      width 100px
+      padding 10px
+      background $primary
+      color #f99157
+      
+    .content
+      margin-top 10px
+      background $primary
+      padding 10px 10px
+      color #99cc99
+      

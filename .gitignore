@@ -1,2 +1,8 @@
 dumlogger/node_modules/
 river/node_modules/
+*.sublime-workspace
+*.sublime-project
+.old/
+*/.mimosa/
+*/node_modules/
+gui/public/

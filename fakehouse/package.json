@@ -1,0 +1,20 @@
+{
+  "name": "drops-fakehouse",
+  "version": "0.1.0",
+  "description": "An example application which logs data to drops. This example is faking a sensor-filled house.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
+  },
+  "keywords": [
+    "logging",
+    "drops",
+    "example"
+  ],
+  "author": "Emil Ingerslev",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "~1.7.1"
+  }
+}

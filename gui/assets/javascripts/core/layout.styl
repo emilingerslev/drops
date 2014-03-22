@@ -71,23 +71,29 @@ button
     left 0
     width 40px
     background-color $primary
+    display block
 
     li
-      font-family 'EntypoRegular'
-      font-size 48px
-      line-height 0px
       display block
       width 40px
       height 40px
       background-color $primary
       text-align center
       cursor pointer
+      position relative
 
       a
         display block
+        font-family 'EntypoRegular'
+        line-height 0px
+        font-size 48px
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        display block
         padding-top 8px
-        width 40px
-        height (40px - @padding-top)
         text-decoration none
         color $tertiary
 

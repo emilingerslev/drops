@@ -1,0 +1,15 @@
+div.application
+  
+  ul.menu
+    li.item.ico(ng-repeat="item in items" ng-class="{selected: item.ctrl == selectedController}")
+      a(href="/\#{{item.route}}", ng-bind-html="item.icon") 
+    //- li.item.ico
+    //-   | &#128248;
+      
+  activity()
+
+  div.view(ng-view="")
+
+
+
+

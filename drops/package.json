@@ -1,0 +1,30 @@
+{
+  "name": "drops",
+  "version": "0.0.0",
+  "description": "Runner and core of drops, a tool for analytics and monitoring of apps, data structures and internet of things.",
+  "main": "start.js",
+  "dependencies": {
+    "amqp": "~0.1.8",
+    "express": "~3.4.7",
+    "socket.io": "~0.9.16",
+    "elasticsearch": "~1.5.2",
+    "watchr": "~2.4.11",
+    "underscore": "~1.6.0",
+    "coffee-script": "~1.7.1",
+    "q": "~1.0.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "drops",
+    "logging",
+    "monitoring",
+    "analytics"
+  ],
+  "author": "Emil Ingerslev",
+  "license": "ISC"
+}

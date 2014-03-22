@@ -1,15 +1,18 @@
-﻿﻿angular.module('drops', ['ngRoute'])
+﻿angular.module('drops', ['ngRoute', 'd3'])
 
   .config ['$routeProvider', ($routeProvider) ->
     $routeProvider
-    .when '/main',
-      templateUrl: 'main'
-      controller: 'MainCtrl'
+    .when '/runner',
+      templateUrl: 'runner'
+      controller: 'RunnerCtrl'
     .when '/dashboard',
       templateUrl: 'dashboard'
       controller: 'DashboardCtrl'
+    .when '/walls',
+      templateUrl: 'walls'
+      controller: 'WallsCtrl'
     .otherwise 
-      redirectTo: '/main'
+      redirectTo: '/runner'
   ]
 
   # load templates build with mimosa

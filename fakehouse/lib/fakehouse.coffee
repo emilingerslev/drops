@@ -1,0 +1,1 @@
+log = require('drops-log')

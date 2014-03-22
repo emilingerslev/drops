@@ -19,7 +19,7 @@
 #   console.log('  email: ' + result.email);
 # )
 
-log = require './log'
+log = require 'drops-log'
 data = require './data'
 
 log.config app: 'dumlogger', ->

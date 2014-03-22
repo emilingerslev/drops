@@ -11,15 +11,11 @@ exports.startServer = (config, callback) ->
 
   app.configure ->
     app.set 'port', port
-    #app.set 'views', config.server.views.path
-    #app.engine config.server.views.extension, engines[config.server.views.compileWith]
-    #app.set 'view engine', config.server.views.extension
     app.use express.favicon()
     app.use express.urlencoded()
     app.use express.json()
     app.use express.methodOverride()
     app.use express.compress()
-    app.use config.server.base, app.router
     app.use express.static(config.watch.compiledDir)
 
   app.configure 'development', ->

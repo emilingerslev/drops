@@ -5,6 +5,7 @@
     "angular": "~1.2.10",
     "angular-route": "~1.2.10",
     "underscore": "~1.5.2",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "ua-parser-js": "~0.6.2"
   }
 }

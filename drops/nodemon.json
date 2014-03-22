@@ -1,0 +1,5 @@
+{
+  "ignore": [],
+  "watch": ["lib"],
+  "ext": "js coffee json"
+}

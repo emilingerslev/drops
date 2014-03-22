@@ -10,7 +10,9 @@ exports.config =
     compiledDir: "public"
   server:
     defaultServer:
-      enabled: true
+      enabled: false
+    views:
+      path: 'assets'
   template:
     wrapType: 'none'
   copy: 

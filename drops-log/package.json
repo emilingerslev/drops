@@ -1,0 +1,20 @@
+{
+  "name": "drops-log",
+  "version": "0.1.0",
+  "description": "A library for logging data to drops",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "logging",
+    "monitoring",
+    "drops"
+  ],
+  "author": "Emil Ingerslev",
+  "license": "ISC",
+  "dependencies": {
+    "amqp": "~0.2.0",
+    "coffee-script": "~1.7.1"
+  }
+}

@@ -47,9 +47,14 @@ io.sockets.on('connection', (socket) ->
     es.search(
       index: 'drops_test',
       #type: ,
-      q: data.query
+      body:
+        from: 0
+        size: 1000
+        query:
+          match:
+            _all: data.query
     ).then((body) ->
-      socket.emit('searchResult', body)
+      socket.emit('searchResult', query: data.query, search: body)
     , (err) ->
       console.trace(err)
     )

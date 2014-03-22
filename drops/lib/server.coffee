@@ -1,20 +1,22 @@
+q = require('q')
 express = require 'express'
 socketio = require 'socket.io'
 commands = require './commands'
+apps = require './apps'
+walls = require './walls'
 
 io = null
 app = null
 server = null
 
 exports.start = (options) ->
-
   {port} = options 
 
   app = express()
   server = app.listen port, ->
     console.log "Express server listening on port %d in %s mode", server.address().port, app.settings.env
 
-  io = socketio.listen(server)
+  io = socketio.listen(server, 'log level': 1)
   app.configure ->
     app.set 'port', port
     app.use express.favicon()
@@ -25,13 +27,23 @@ exports.start = (options) ->
     app.use app.router
 
   io.sockets.on 'connection', (socket) ->
-    commands.status(socket)
+    apps.on 'status', (data) ->
+      socket.emit 'status', data 
+
+    apps.on 'appstatus', (data) ->
+      socket.emit 'status:' + data.name, data 
+
+    walls.on 'wall-update', (data) ->
+      socket.emit 'wall-update', data 
+
+    apps.status()
+    walls.status()
 
     socket.on 'enable', (data) ->
-      commands.enable socket, data.appName
+      apps.startApp data.appName
 
     socket.on 'disable', (data) ->
-      commands.disable socket, data.appName
+      apps.stopApp data.appName 
 
   app.configure 'development', ->
     app.use express.errorHandler()

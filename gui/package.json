@@ -1,7 +1,9 @@
 {
-  "name": "PTS.Backend.Client.Shell.Web",
+  "name": "drops.gui",
   "version": "1.0.0",
   "type": "app",
   "dependencies": {
+    "express": "~3.5.0",
+    "consolidate": "~0.10.0"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "name": "drops-dumlogger",
+  "version": "0.1.0",
+  "description": "An example application which logs data to drops. This example is just logging a lot of stuff in a linear flow.",
+  "main": "index.js",
+  "dependencies": {
+    "amqp": "~0.1.8",
+    "drops-log": "~0.1.0",
+    "prompt": "~0.2.12",
+    "coffee-script": "~1.7.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "node start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "logging",
+    "drops",
+    "example"
+  ],
+  "author": "Emil Ingerslev",
+  "license": "ISC"
+}

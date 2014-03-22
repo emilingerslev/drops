@@ -1,0 +1,6 @@
+div.content.walls
+
+  div.wall(ng-repeat="(name,wall) in walls")
+
+    div.name {{wall.name}}
+    wall-presenter(data="wall.data")

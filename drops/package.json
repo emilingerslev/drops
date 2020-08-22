@@ -5,7 +5,7 @@
   "main": "start.js",
   "dependencies": {
     "amqp": "~0.1.8",
-    "express": "~3.4.7",
+    "express": "~4.17.1",
     "socket.io": "~0.9.16",
     "elasticsearch": "~1.5.2",
     "watchr": "~2.4.11",
